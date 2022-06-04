@@ -65,3 +65,47 @@ dkms.conf
 *.zip
 *.sit
 *.sitx
+
+# Xcode noise
+build
+*.pbxuser
+*.mode1v3
+*.mode1
+*.nib
+*.xccheckout
+#*.xcscheme schemes we need to track
+xcuserdata
+*.xcworkspacedata
+*.xcscmblueprint
+check-signature
+enc_temp_folder
+*.dylib
+*.dSYM
+
+# vc++ noise
+# the resource compiler is absurdly noisy and requires delicacy to get around it
+RC*
+!RC*/
+!RC*.*
+RD*
+!RD*/
+!RD*.*
+*.vcxproj.user
+*.suo
+# Some genius at Micro$loth put Batch Build values in the .suo file
+#!Patterson Plug-Ins.suo
+*.aps
+*.sdf
+*.opensdf
+*.VC.db*
+*.VC.opendb
+*.ipch
+*.iobj
+.vs
+*.dll
+*.exp
+*.pdb
+*.lib
+Release
+Debug
+x64
