@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <LuaVersion>5.2.4</LuaVersion>
-    <LuaDir>$(ProjectDir)\..\-Lua\lua-$(LuaVersion)\src</LuaDir>
+    <LuaDir>$(ProjectDir)\..\lua-$(LuaVersion)\src</LuaDir>
   </PropertyGroup>
   <PropertyGroup>
     <IncludePath>$(LuaDir);$(IncludePath)</IncludePath>
