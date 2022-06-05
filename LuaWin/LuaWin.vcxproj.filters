@@ -16,6 +16,9 @@
     <Filter Include="Source Files\src">
       <UniqueIdentifier>{5f8aa0b4-0797-4ddb-befb-b7dbd97a4ef6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="utf8-lua52">
+      <UniqueIdentifier>{01a35a15-3d83-42e7-a89a-e8fe5e0e1feb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -98,6 +101,9 @@
     </ClInclude>
     <ClInclude Include="..\lua-5.2.4\src\lzio.h">
       <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utf8-lua52\lutf8lib.h">
+      <Filter>utf8-lua52</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +205,9 @@
     </ClCompile>
     <ClCompile Include="..\lua-5.2.4\src\lzio.c">
       <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utf8-lua52\lutf8lib.c">
+      <Filter>utf8-lua52</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

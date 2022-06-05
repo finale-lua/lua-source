@@ -64,6 +64,8 @@
 		B503E8782731F11000B4DB3A /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E83F2731F11000B4DB3A /* lbaselib.c */; };
 		B503E8792731F11000B4DB3A /* lstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E8402731F11000B4DB3A /* lstrlib.c */; };
 		B503E87A2731F11000B4DB3A /* lcorolib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E8412731F11000B4DB3A /* lcorolib.c */; };
+		B5E3A83B284CE09400F60696 /* lutf8lib.c in Sources */ = {isa = PBXBuildFile; fileRef = B5E3A839284CE09400F60696 /* lutf8lib.c */; };
+		B5E3A83C284CE09400F60696 /* lutf8lib.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E3A83A284CE09400F60696 /* lutf8lib.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		B50BDDA326E94DF500F1FAD3 /* DebugAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugAll.xcconfig; sourceTree = "<group>"; };
 		B50BDDA426E94DF500F1FAD3 /* ReleaseAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseAll.xcconfig; sourceTree = "<group>"; };
 		B50BDDA526E94DF500F1FAD3 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		B5E3A839284CE09400F60696 /* lutf8lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lutf8lib.c; sourceTree = "<group>"; };
+		B5E3A83A284CE09400F60696 /* lutf8lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lutf8lib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			children = (
 				B50BDDA226E94DC900F1FAD3 /* Config */,
 				B503E8082731F0DB00B4DB3A /* Source */,
+				B5E3A838284CE03E00F60696 /* utf8-lua52 */,
 				B50BDD1F26E9499000F1FAD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -233,6 +238,15 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		B5E3A838284CE03E00F60696 /* utf8-lua52 */ = {
+			isa = PBXGroup;
+			children = (
+				B5E3A839284CE09400F60696 /* lutf8lib.c */,
+				B5E3A83A284CE09400F60696 /* lutf8lib.h */,
+			);
+			path = "utf8-lua52";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -246,6 +260,7 @@
 				B503E8682731F11000B4DB3A /* lctype.h in Headers */,
 				B503E8662731F11000B4DB3A /* lapi.h in Headers */,
 				B503E8482731F11000B4DB3A /* llimits.h in Headers */,
+				B5E3A83C284CE09400F60696 /* lutf8lib.h in Headers */,
 				B503E8512731F11000B4DB3A /* lfunc.h in Headers */,
 				B503E8542731F11000B4DB3A /* luaconf.h in Headers */,
 				B503E8692731F11000B4DB3A /* lualib.h in Headers */,
@@ -328,6 +343,7 @@
 				B503E84B2731F11000B4DB3A /* lctype.c in Sources */,
 				B503E8452731F11000B4DB3A /* lfunc.c in Sources */,
 				B503E8642731F11000B4DB3A /* lundump.c in Sources */,
+				B5E3A83B284CE09400F60696 /* lutf8lib.c in Sources */,
 				B503E8622731F11000B4DB3A /* lvm.c in Sources */,
 				B503E86A2731F11000B4DB3A /* lparser.c in Sources */,
 				B503E8462731F11000B4DB3A /* ltable.c in Sources */,
