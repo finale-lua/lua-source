@@ -7,7 +7,7 @@
 #define lutf8lib_c
 #define LUA_LIB
 
-#include "lprefix.h"
+#include "lutf8lib.h"
 
 
 #include <assert.h>
@@ -21,6 +21,7 @@
 #include "lualib.h"
 
 #define MAXUNICODE	0x10FFFF
+#define MAXUTF8SEQ  4
 
 #define iscont(p)	((*(p) & 0xC0) == 0x80)
 
@@ -124,11 +125,42 @@ static int codepoint (lua_State *L) {
   return n;
 }
 
+static size_t code_to_utf8(char *const buffer, const lua_Integer code)
+{
+    if (code <= 0x7F) {
+        buffer[0] = (char)code;
+        return 1;
+    }
+    if (code <= 0x7FF) {
+        buffer[0] = (char)(0xC0 | (code >> 6));            /* 110xxxxx */
+        buffer[1] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
+        return 2;
+    }
+    if (code <= 0xFFFF) {
+        buffer[0] = (char)(0xE0 | (code >> 12));           /* 1110xxxx */
+        buffer[1] = (char)(0x80 | ((code >> 6) & 0x3F));   /* 10xxxxxx */
+        buffer[2] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
+        return 3;
+    }
+    if (code <= 0x10FFFF) {
+        buffer[0] = (char)(0xF0 | (code >> 18));           /* 11110xxx */
+        buffer[1] = (char)(0x80 | ((code >> 12) & 0x3F));  /* 10xxxxxx */
+        buffer[2] = (char)(0x80 | ((code >> 6) & 0x3F));   /* 10xxxxxx */
+        buffer[3] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
+        return 4;
+    }
+    return 0;
+}
 
 static void pushutfchar (lua_State *L, int arg) {
   lua_Integer code = luaL_checkinteger(L, arg);
   luaL_argcheck(L, 0 <= code && code <= MAXUNICODE, arg, "value out of range");
-  lua_pushfstring(L, "%U", (long)code);
+  char buf[MAXUTF8SEQ+1];
+  const size_t nchars = code_to_utf8(buf, code);
+  lua_assert(nchars > 0);
+  lua_assert(nchars < sizeof(buf));
+  buf[nchars] = 0;
+  lua_pushstring(L, buf);
 }
 
 

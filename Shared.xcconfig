@@ -1,0 +1,22 @@
+//
+//  Shared.xcconfig
+//
+//  Created by Robert Patterson on 09/08/2021.
+//
+//
+
+GCC_PREPROCESSOR_DEFINITIONS_All = LUA_USE_MACOSX
+
+// Lua 5.4.3 needs these warnings softened
+GCC_WARN_UNINITIALIZED_AUTOS = YES
+GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO
+
+// Lua 5.2.4 needs this warning removed as well
+CLANG_WARN_COMMA = NO
+
+// Current minimum plugin target OS (not actually used by Lua, so just needs to be low enough to prevent warnings)
+MACOSX_DEPLOYMENT_TARGET = 10.10
+
+LUA_VERSION = 5.2.4
+
+USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lua-$(LUA_VERSION)/src"
