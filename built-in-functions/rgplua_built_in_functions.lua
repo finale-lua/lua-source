@@ -177,6 +177,23 @@ function eachcell(region)
     end
 end
 
+function eachstaff(region)
+    local measure = region.StartMeasure
+    local slotno = region:GetStartSlot() - 1
+    return function ()
+        while true do
+            slotno = slotno + 1
+            if slotno <= region:GetEndSlot() then
+                local staff_num = region:CalcStaffNumber(slotno)
+                if staff_num > 0 then
+                    return staff_num
+                end
+            end
+            return nil
+        end
+    end
+end
+
 --[[
 -- replacement for known bit32 functions in the Finale lua world that uses Lua 5.2
 -- uncomment if we ever update to Lua 5.3 or higher.
