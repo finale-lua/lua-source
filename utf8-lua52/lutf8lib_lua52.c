@@ -4,10 +4,10 @@
 ** See Copyright Notice in lua.h
 */
 
-#define lutf8lib_c
+#define lutf8lib_lua52_c
 #define LUA_LIB
 
-#include "lutf8lib.h"
+#include "lutf8lib_lua52.h"
 
 
 #include <assert.h>
@@ -279,7 +279,7 @@ static const luaL_Reg funcs[] = {
 };
 
 
-LUAMOD_API int luaopen_utf8 (lua_State *L) {
+LUAMOD_API int luaopen_utf8_standalone (lua_State *L) {
   luaL_newlib(L, funcs);
   lua_pushlstring(L, UTF8PATT, sizeof(UTF8PATT)/sizeof(char) - 1);
   lua_setfield(L, -2, "charpattern");
