@@ -10,6 +10,6 @@
 
 #include "lua.h"
 
-LUAMOD_API int luaopen_utf8 (lua_State *L);
+LUAMOD_API int luaopen_utf8_standalone (lua_State *L);
 
 #endif /* lutf8lib_h */
