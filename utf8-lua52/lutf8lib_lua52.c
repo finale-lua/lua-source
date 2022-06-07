@@ -4,10 +4,10 @@
 ** See Copyright Notice in lua.h
 */
 
-#define lutf8lib_c
+#define lutf8lib_lua52_c
 #define LUA_LIB
 
-#include "lutf8lib.h"
+#include "lutf8lib_lua52.h"
 
 
 #include <assert.h>
