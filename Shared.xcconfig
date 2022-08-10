@@ -15,7 +15,7 @@ GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO
 CLANG_WARN_COMMA = NO
 
 // Current minimum plugin target OS (not actually used by Lua, so just needs to be low enough to prevent warnings)
-MACOSX_DEPLOYMENT_TARGET = 10.10
+MACOSX_DEPLOYMENT_TARGET = 10.13
 
 LUA_VERSION = 5.2.4
 
