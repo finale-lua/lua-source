@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5C847FB28B4F3F70057B99B /* mime.c in Sources */ = {isa = PBXBuildFile; fileRef = B5C847F928B4F3F70057B99B /* mime.c */; };
+		B5C847FC28B4F3F70057B99B /* mime.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C847FA28B4F3F70057B99B /* mime.h */; };
 		B5D2E7AE2714841400414D2D /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = B5D2E7AD2714841300414D2D /* socket.h */; };
 		B5D2E7B02714843700414D2D /* pierror.h in Headers */ = {isa = PBXBuildFile; fileRef = B5D2E7AF2714843700414D2D /* pierror.h */; };
 		B5EE21E72711F9B300596BBE /* select.h in Headers */ = {isa = PBXBuildFile; fileRef = B5EE21CF2711F9B200596BBE /* select.h */; };
@@ -36,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5C847F928B4F3F70057B99B /* mime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mime.c; sourceTree = "<group>"; };
+		B5C847FA28B4F3F70057B99B /* mime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mime.h; sourceTree = "<group>"; };
+		B5C847FE28B4FFE00057B99B /* socket.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socket.lua; sourceTree = "<group>"; };
 		B5D2E7AD2714841300414D2D /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
 		B5D2E7AF2714843700414D2D /* pierror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pierror.h; sourceTree = "<group>"; };
 		B5EE21C32711F8EE00596BBE /* libsocket-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libsocket-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,9 +84,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5C847FD28B4FE780057B99B /* Lua */ = {
+			isa = PBXGroup;
+			children = (
+				B5C847FE28B4FFE00057B99B /* socket.lua */,
+			);
+			name = Lua;
+			path = luasocket/src;
+			sourceTree = "<group>";
+		};
 		B5EE21BA2711F8EE00596BBE = {
 			isa = PBXGroup;
 			children = (
+				B5C847FD28B4FE780057B99B /* Lua */,
 				B5EE21CA2711F90700596BBE /* Config */,
 				B5EE21CE2711F96000596BBE /* Source */,
 				B5EE21C42711F8EE00596BBE /* Products */,
@@ -121,6 +136,8 @@
 				B5EE21D52711F9B200596BBE /* io.h */,
 				B5EE21DA2711F9B200596BBE /* luasocket.c */,
 				B5EE21E62711F9B300596BBE /* luasocket.h */,
+				B5C847F928B4F3F70057B99B /* mime.c */,
+				B5C847FA28B4F3F70057B99B /* mime.h */,
 				B5EE21D12711F9B200596BBE /* options.c */,
 				B5EE21DB2711F9B200596BBE /* options.h */,
 				B5D2E7AF2714843700414D2D /* pierror.h */,
@@ -152,6 +169,7 @@
 				B5EE21F12711F9B300596BBE /* tcp.h in Headers */,
 				B5D2E7AE2714841400414D2D /* socket.h in Headers */,
 				B5EE21ED2711F9B300596BBE /* io.h in Headers */,
+				B5C847FC28B4F3F70057B99B /* mime.h in Headers */,
 				B5EE21FE2711F9B300596BBE /* luasocket.h in Headers */,
 				B5EE21EC2711F9B300596BBE /* inet.h in Headers */,
 				B5EE21EA2711F9B300596BBE /* udp.h in Headers */,
@@ -220,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C847FB28B4F3F70057B99B /* mime.c in Sources */,
 				B5EE21F42711F9B300596BBE /* udp.c in Sources */,
 				B5EE21F72711F9B300596BBE /* except.c in Sources */,
 				B5EE21F02711F9B300596BBE /* io.c in Sources */,
