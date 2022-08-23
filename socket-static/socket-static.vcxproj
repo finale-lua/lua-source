@@ -161,6 +161,7 @@
     <ClInclude Include="..\luasocket\src\inet.h" />
     <ClInclude Include="..\luasocket\src\io.h" />
     <ClInclude Include="..\luasocket\src\luasocket.h" />
+    <ClInclude Include="..\luasocket\src\mime.h" />
     <ClInclude Include="..\luasocket\src\options.h" />
     <ClInclude Include="..\luasocket\src\pierror.h" />
     <ClInclude Include="..\luasocket\src\select.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="..\luasocket\src\inet.c" />
     <ClCompile Include="..\luasocket\src\io.c" />
     <ClCompile Include="..\luasocket\src\luasocket.c" />
+    <ClCompile Include="..\luasocket\src\mime.c" />
     <ClCompile Include="..\luasocket\src\options.c" />
     <ClCompile Include="..\luasocket\src\select.c" />
     <ClCompile Include="..\luasocket\src\tcp.c" />

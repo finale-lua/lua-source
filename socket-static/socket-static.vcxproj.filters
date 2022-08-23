@@ -63,6 +63,9 @@
     <ClInclude Include="..\luasocket\src\socket.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\luasocket\src\mime.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.c">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\luasocket\src\wsocket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\luasocket\src\mime.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
