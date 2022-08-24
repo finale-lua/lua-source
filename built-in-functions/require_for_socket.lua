@@ -14,5 +14,12 @@ function require(item)
             item = item:sub(end_index+1)
         end
     end
-    return __original_require(item)
+    local required_module = nil
+    local success, errormsg = pcall(function()
+            required_module = __original_require(item)
+        end)
+    if not success then
+        error(errormsg, 2) -- throw error at level of caller
+    end
+    return required_module
 end
