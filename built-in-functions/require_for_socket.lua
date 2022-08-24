@@ -6,7 +6,7 @@
     could pull them straight out of the src directory of the luasocket Github repository.
 ]]
 
-__aaa_require_raw_xxxx = require -- choose a name that is unlikely to conflict
+__original_require = require -- choose a name that is unlikely to conflict
 function require(item)
     if item ~= "socket.core" then
         local _, end_index = item:find("^socket%.")
@@ -14,5 +14,5 @@ function require(item)
             item = item:sub(end_index+1)
         end
     end
-    return __aaa_require_raw_xxxx(item)
+    return __original_require(item)
 end
