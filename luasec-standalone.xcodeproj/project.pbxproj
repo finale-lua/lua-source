@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B53BE35028CA68210002889B /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34328CA68210002889B /* config.c */; };
+		B53BE35128CA68210002889B /* options.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34528CA68210002889B /* options.h */; };
+		B53BE35228CA68210002889B /* x509.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34628CA68210002889B /* x509.h */; };
+		B53BE35328CA68210002889B /* ssl.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34728CA68210002889B /* ssl.c */; };
+		B53BE35428CA68210002889B /* x509.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34828CA68210002889B /* x509.c */; };
+		B53BE35528CA68210002889B /* ec.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34928CA68210002889B /* ec.c */; };
+		B53BE35628CA68210002889B /* ec.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34A28CA68210002889B /* ec.h */; };
+		B53BE35728CA68210002889B /* compat.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34B28CA68210002889B /* compat.h */; };
+		B53BE35828CA68210002889B /* options.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34C28CA68210002889B /* options.c */; };
+		B53BE35928CA68210002889B /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34D28CA68210002889B /* context.h */; };
+		B53BE35A28CA68210002889B /* ssl.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BE34E28CA68210002889B /* ssl.h */; };
+		B53BE35B28CA68210002889B /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = B53BE34F28CA68210002889B /* context.c */; };
+		B53BE36228CA6E5E0002889B /* libLua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B53BE34228CA67FB0002889B /* libLua.a */; };
+		B53BE36F28CA73690002889B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B53BE36C28CA73690002889B /* libcrypto.a */; };
+		B53BE37028CA73690002889B /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B53BE36D28CA73690002889B /* libssl.a */; };
+		B5A7EAB828CA757200EDF506 /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7EAAF28CA757200EDF506 /* buffer.h */; };
+		B5A7EAB928CA757200EDF506 /* timeout.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A7EAB028CA757200EDF506 /* timeout.c */; };
+		B5A7EABA28CA757200EDF506 /* io.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7EAB128CA757200EDF506 /* io.h */; };
+		B5A7EABB28CA757200EDF506 /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7EAB228CA757200EDF506 /* socket.h */; };
+		B5A7EABC28CA757200EDF506 /* usocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7EAB328CA757200EDF506 /* usocket.h */; };
+		B5A7EABD28CA757200EDF506 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A7EAB428CA757200EDF506 /* buffer.c */; };
+		B5A7EABE28CA757200EDF506 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A7EAB528CA757200EDF506 /* io.c */; };
+		B5A7EABF28CA757200EDF506 /* usocket.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A7EAB628CA757200EDF506 /* usocket.c */; };
+		B5A7EAC028CA757200EDF506 /* timeout.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7EAB728CA757200EDF506 /* timeout.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B53BE34128CA67FB0002889B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B53BE33D28CA67FA0002889B /* Lua.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B50BDD1E26E9499000F1FAD3;
+			remoteInfo = Lua;
+		};
+		B53BE36728CA716B0002889B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B53BE33D28CA67FA0002889B /* Lua.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B50BDD1D26E9499000F1FAD3;
+			remoteInfo = Lua;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B53BE33B28CA66B40002889B /* DebugAll.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugAll.xcconfig; sourceTree = "<group>"; };
+		B53BE33C28CA66B40002889B /* ReleaseAll.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseAll.xcconfig; sourceTree = "<group>"; };
+		B53BE33D28CA67FA0002889B /* Lua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Lua.xcodeproj; sourceTree = "<group>"; };
+		B53BE34328CA68210002889B /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = config.c; sourceTree = "<group>"; };
+		B53BE34528CA68210002889B /* options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = options.h; sourceTree = "<group>"; };
+		B53BE34628CA68210002889B /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
+		B53BE34728CA68210002889B /* ssl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ssl.c; sourceTree = "<group>"; };
+		B53BE34828CA68210002889B /* x509.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = x509.c; sourceTree = "<group>"; };
+		B53BE34928CA68210002889B /* ec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ec.c; sourceTree = "<group>"; };
+		B53BE34A28CA68210002889B /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
+		B53BE34B28CA68210002889B /* compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compat.h; sourceTree = "<group>"; };
+		B53BE34C28CA68210002889B /* options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = options.c; sourceTree = "<group>"; };
+		B53BE34D28CA68210002889B /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		B53BE34E28CA68210002889B /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
+		B53BE34F28CA68210002889B /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		B53BE36328CA6EB50002889B /* openssl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = openssl; path = "../../../../../../../usr/local/Cellar/openssl@3/3.0.5/bin/openssl"; sourceTree = "<group>"; };
+		B53BE36528CA70720002889B /* openssl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = openssl; path = ../../../../../../../usr/local/Cellar/libressl/3.5.3/bin/openssl; sourceTree = "<group>"; };
+		B53BE36628CA710C0002889B /* ocspcheck */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ocspcheck; path = ../../../../../../../usr/local/Cellar/libressl/3.5.3/bin/ocspcheck; sourceTree = "<group>"; };
+		B53BE36B28CA73690002889B /* libtls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtls.a; path = ../../../../../../../usr/local/Cellar/libressl/3.5.3/lib/libtls.a; sourceTree = "<group>"; };
+		B53BE36C28CA73690002889B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../../../usr/local/Cellar/libressl/3.5.3/lib/libcrypto.a; sourceTree = "<group>"; };
+		B53BE36D28CA73690002889B /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../../../usr/local/Cellar/libressl/3.5.3/lib/libssl.a; sourceTree = "<group>"; };
+		B55E2B362610CE9C003E0F63 /* luasec.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = luasec.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A7EAAF28CA757200EDF506 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		B5A7EAB028CA757200EDF506 /* timeout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = timeout.c; sourceTree = "<group>"; };
+		B5A7EAB128CA757200EDF506 /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
+		B5A7EAB228CA757200EDF506 /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
+		B5A7EAB328CA757200EDF506 /* usocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usocket.h; sourceTree = "<group>"; };
+		B5A7EAB428CA757200EDF506 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		B5A7EAB528CA757200EDF506 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = io.c; sourceTree = "<group>"; };
+		B5A7EAB628CA757200EDF506 /* usocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usocket.c; sourceTree = "<group>"; };
+		B5A7EAB728CA757200EDF506 /* timeout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeout.h; sourceTree = "<group>"; };
+		B5AABB52284E69DA00708D15 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B55E2B342610CE9C003E0F63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53BE36228CA6E5E0002889B /* libLua.a in Frameworks */,
+				B53BE36F28CA73690002889B /* libcrypto.a in Frameworks */,
+				B53BE37028CA73690002889B /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B50B920F26ED05D100DE877C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B53BE36C28CA73690002889B /* libcrypto.a */,
+				B53BE36D28CA73690002889B /* libssl.a */,
+				B53BE36B28CA73690002889B /* libtls.a */,
+				B53BE36628CA710C0002889B /* ocspcheck */,
+				B53BE36528CA70720002889B /* openssl */,
+				B53BE36328CA6EB50002889B /* openssl */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B53BE33E28CA67FA0002889B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B53BE34228CA67FB0002889B /* libLua.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B55E2B2D2610CE9C003E0F63 = {
+			isa = PBXGroup;
+			children = (
+				B53BE33B28CA66B40002889B /* DebugAll.xcconfig */,
+				B53BE33C28CA66B40002889B /* ReleaseAll.xcconfig */,
+				B5AABB52284E69DA00708D15 /* Shared.xcconfig */,
+				B53BE33D28CA67FA0002889B /* Lua.xcodeproj */,
+				B5AABB41284E569300708D15 /* Source */,
+				B55E2B372610CE9C003E0F63 /* Products */,
+				B50B920F26ED05D100DE877C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B55E2B372610CE9C003E0F63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B55E2B362610CE9C003E0F63 /* luasec.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5A7EAAE28CA754F00EDF506 /* luasocket */ = {
+			isa = PBXGroup;
+			children = (
+				B5A7EAB428CA757200EDF506 /* buffer.c */,
+				B5A7EAAF28CA757200EDF506 /* buffer.h */,
+				B5A7EAB528CA757200EDF506 /* io.c */,
+				B5A7EAB128CA757200EDF506 /* io.h */,
+				B5A7EAB228CA757200EDF506 /* socket.h */,
+				B5A7EAB028CA757200EDF506 /* timeout.c */,
+				B5A7EAB728CA757200EDF506 /* timeout.h */,
+				B5A7EAB628CA757200EDF506 /* usocket.c */,
+				B5A7EAB328CA757200EDF506 /* usocket.h */,
+			);
+			path = luasocket;
+			sourceTree = "<group>";
+		};
+		B5AABB41284E569300708D15 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B5A7EAAE28CA754F00EDF506 /* luasocket */,
+				B53BE34B28CA68210002889B /* compat.h */,
+				B53BE34328CA68210002889B /* config.c */,
+				B53BE34F28CA68210002889B /* context.c */,
+				B53BE34D28CA68210002889B /* context.h */,
+				B53BE34928CA68210002889B /* ec.c */,
+				B53BE34A28CA68210002889B /* ec.h */,
+				B53BE34C28CA68210002889B /* options.c */,
+				B53BE34528CA68210002889B /* options.h */,
+				B53BE34728CA68210002889B /* ssl.c */,
+				B53BE34E28CA68210002889B /* ssl.h */,
+				B53BE34828CA68210002889B /* x509.c */,
+				B53BE34628CA68210002889B /* x509.h */,
+			);
+			name = Source;
+			path = luasec/src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B55E2B322610CE9C003E0F63 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7EABB28CA757200EDF506 /* socket.h in Headers */,
+				B5A7EABC28CA757200EDF506 /* usocket.h in Headers */,
+				B5A7EAC028CA757200EDF506 /* timeout.h in Headers */,
+				B53BE35928CA68210002889B /* context.h in Headers */,
+				B53BE35728CA68210002889B /* compat.h in Headers */,
+				B5A7EABA28CA757200EDF506 /* io.h in Headers */,
+				B53BE35228CA68210002889B /* x509.h in Headers */,
+				B53BE35A28CA68210002889B /* ssl.h in Headers */,
+				B5A7EAB828CA757200EDF506 /* buffer.h in Headers */,
+				B53BE35628CA68210002889B /* ec.h in Headers */,
+				B53BE35128CA68210002889B /* options.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B55E2B352610CE9C003E0F63 /* luasec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55E2B3A2610CE9C003E0F63 /* Build configuration list for PBXNativeTarget "luasec" */;
+			buildPhases = (
+				B55E2B322610CE9C003E0F63 /* Headers */,
+				B55E2B332610CE9C003E0F63 /* Sources */,
+				B55E2B342610CE9C003E0F63 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B53BE36828CA716B0002889B /* PBXTargetDependency */,
+			);
+			name = luasec;
+			productName = LuaInterfaceTest;
+			productReference = B55E2B362610CE9C003E0F63 /* luasec.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B55E2B2E2610CE9C003E0F63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "Robert Patterson";
+				TargetAttributes = {
+					B55E2B352610CE9C003E0F63 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = B55E2B312610CE9C003E0F63 /* Build configuration list for PBXProject "luasec-standalone" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B55E2B2D2610CE9C003E0F63;
+			productRefGroup = B55E2B372610CE9C003E0F63 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B53BE33E28CA67FA0002889B /* Products */;
+					ProjectRef = B53BE33D28CA67FA0002889B /* Lua.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B55E2B352610CE9C003E0F63 /* luasec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B53BE34228CA67FB0002889B /* libLua.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLua.a;
+			remoteRef = B53BE34128CA67FB0002889B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B55E2B332610CE9C003E0F63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53BE35528CA68210002889B /* ec.c in Sources */,
+				B53BE35328CA68210002889B /* ssl.c in Sources */,
+				B53BE35428CA68210002889B /* x509.c in Sources */,
+				B5A7EABD28CA757200EDF506 /* buffer.c in Sources */,
+				B53BE35B28CA68210002889B /* context.c in Sources */,
+				B53BE35828CA68210002889B /* options.c in Sources */,
+				B5A7EABF28CA757200EDF506 /* usocket.c in Sources */,
+				B5A7EAB928CA757200EDF506 /* timeout.c in Sources */,
+				B5A7EABE28CA757200EDF506 /* io.c in Sources */,
+				B53BE35028CA68210002889B /* config.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B53BE36828CA716B0002889B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Lua;
+			targetProxy = B53BE36728CA716B0002889B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B55E2B382610CE9C003E0F63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B53BE33B28CA66B40002889B /* DebugAll.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/luasec/src",
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/libressl/lib/;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = luasec;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B55E2B392610CE9C003E0F63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B53BE33C28CA66B40002889B /* ReleaseAll.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/luasec/src",
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/libressl/lib/;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = luasec;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B55E2B3B2610CE9C003E0F63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B55E2B3C2610CE9C003E0F63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B55E2B312610CE9C003E0F63 /* Build configuration list for PBXProject "luasec-standalone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55E2B382610CE9C003E0F63 /* Debug */,
+				B55E2B392610CE9C003E0F63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B55E2B3A2610CE9C003E0F63 /* Build configuration list for PBXNativeTarget "luasec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55E2B3B2610CE9C003E0F63 /* Debug */,
+				B55E2B3C2610CE9C003E0F63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B55E2B2E2610CE9C003E0F63 /* Project object */;
+}

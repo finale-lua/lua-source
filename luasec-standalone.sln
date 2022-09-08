@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleCLibWin", "SampleCLibWin\SampleCLibWin.vcxproj", "{F94EBA6A-2015-4559-A371-1742C9490A9F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaWin", "lua-source\LuaWin\LuaWin.vcxproj", "{812668CF-E362-4247-BAE6-68620BBA365F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F94EBA6A-2015-4559-A371-1742C9490A9F}.Debug|x64.ActiveCfg = Debug|x64
+		{F94EBA6A-2015-4559-A371-1742C9490A9F}.Debug|x64.Build.0 = Debug|x64
+		{F94EBA6A-2015-4559-A371-1742C9490A9F}.Release|x64.ActiveCfg = Release|x64
+		{F94EBA6A-2015-4559-A371-1742C9490A9F}.Release|x64.Build.0 = Release|x64
+		{812668CF-E362-4247-BAE6-68620BBA365F}.Debug|x64.ActiveCfg = Debug|x64
+		{812668CF-E362-4247-BAE6-68620BBA365F}.Debug|x64.Build.0 = Debug|x64
+		{812668CF-E362-4247-BAE6-68620BBA365F}.Release|x64.ActiveCfg = Release|x64
+		{812668CF-E362-4247-BAE6-68620BBA365F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E60DA64B-5819-445D-9C02-5E8B3016F7FB}
+	EndGlobalSection
+EndGlobal

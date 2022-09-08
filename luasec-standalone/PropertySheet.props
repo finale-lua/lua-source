@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <LuaVersion>5.2.4</LuaVersion>
+    <LuaDir>$(ProjectDir)..\lua-source\lua-$(LuaVersion)\src</LuaDir>
+    <LuaName>sampleclib</LuaName>
+    <ReleaseDir>$(ProjectDir)..\release</ReleaseDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(LuaDir);</IncludePath>
+    <TargetName>$(LuaName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LuaVersion">
+      <Value>$(LuaVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LuaDir">
+      <Value>$(LuaDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LuaName">
+      <Value>$(LuaName)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ReleaseDir">
+      <Value>$(ReleaseDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
