@@ -15,7 +15,10 @@ function dumpproperties(o)
             if props == nil then return end
             local returnval = {}
             for k1, v1 in pairs(props) do
-                returnval[k1] = o[k1]
+                -- Some classes have properties that cannot be called in lower Finale versions, so skip any errors.
+                -- (An example is FCGeneralPrefs.)
+                local success, value = pcall(function() return o[k1] end)
+                if success then returnval[k1] = value end
             end
             return returnval
         end
