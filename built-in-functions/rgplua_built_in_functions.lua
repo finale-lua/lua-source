@@ -5,21 +5,34 @@
 
 finaleplugin = {} -- allows the plugin to create its header
 
-function dumpproperties(o)
+function dumpproperties(o, include_bases)
     if type(o) ~= "userdata" then return nil end
     if o["ClassName"] == nil then return nil end
     local classname = o:ClassName()
     for k,v in pairs(_G.finale) do
         if k == classname then
-            local props = v.__propget -- with JW Lua v0.54 and earlier, this would have been v.__class.__propget
-            if props == nil then return end
             local returnval = {}
-            for k1, v1 in pairs(props) do
-                -- Some classes have properties that cannot be called in lower Finale versions, so skip any errors.
-                -- (An example is FCGeneralPrefs.)
-                local success, value = pcall(function() return o[k1] end)
-                if success then returnval[k1] = value end
+            local populate_returnval
+            populate_returnval = function(classtable)
+                if include_bases then
+                    local parent_table = classtable.__parent
+                    if parent_table then
+                        for parent_name, _ in pairs(parent_table) do
+                            populate_returnval(_G.finale[parent_name])
+                        end
+                    end
+                end
+                -- include this instance's properties last, so that parent properties of the same name are overwritten
+                local props = classtable.__propget -- with JW Lua v0.54 and earlier, this would have been v.__class.__propget
+                if props == nil then return end
+                for k1, v1 in pairs(props) do
+                    -- Some classes have properties that cannot be called in lower Finale versions, so skip any errors.
+                    -- (An example is FCGeneralPrefs.)
+                    local success, value = pcall(function() return o[k1] end)
+                    if success then returnval[k1] = value end
+                end
             end
+            populate_returnval(v)
             return returnval
         end
     end
