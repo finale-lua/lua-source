@@ -19,9 +19,11 @@
 
 #include "lauxlib.h"
 #include "lualib.h"
+#include "llimits.h"
 
 #define MAXUNICODE	0x10FFFF
-#define MAXUTF8SEQ  4
+#define MAXUTF       0x7FFFFFFFu
+#define MAXUTF8SEQ   8
 
 #define iscont(p)	((*(p) & 0xC0) == 0x80)
 
@@ -125,31 +127,26 @@ static int codepoint (lua_State *L) {
   return n;
 }
 
-static size_t code_to_utf8(char *const buffer, const lua_Integer code)
+#ifndef cast_char
+#define cast_char(i)   cast(char, (i))
+#endif
+
+static size_t code_to_utf8(char *const buffer, lua_Integer code)
 {
-    if (code <= 0x7F) {
-        buffer[0] = (char)code;
-        return 1;
-    }
-    if (code <= 0x7FF) {
-        buffer[0] = (char)(0xC0 | (code >> 6));            /* 110xxxxx */
-        buffer[1] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
-        return 2;
-    }
-    if (code <= 0xFFFF) {
-        buffer[0] = (char)(0xE0 | (code >> 12));           /* 1110xxxx */
-        buffer[1] = (char)(0x80 | ((code >> 6) & 0x3F));   /* 10xxxxxx */
-        buffer[2] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
-        return 3;
-    }
-    if (code <= 0x10FFFF) {
-        buffer[0] = (char)(0xF0 | (code >> 18));           /* 11110xxx */
-        buffer[1] = (char)(0x80 | ((code >> 12) & 0x3F));  /* 10xxxxxx */
-        buffer[2] = (char)(0x80 | ((code >> 6) & 0x3F));   /* 10xxxxxx */
-        buffer[3] = (char)(0x80 | (code & 0x3F));          /* 10xxxxxx */
-        return 4;
-    }
-    return 0;
+   int n = 1;  /* number of bytes put in buffer (backwards) */
+   lua_assert(code <= MAXUTF);
+   if (code < 0x80)  /* ascii? */
+      buffer[MAXUTF8SEQ - 1] = cast_char(code);
+   else {  /* need continuation bytes */
+      unsigned int mfb = 0x3f;  /* maximum that fits in first byte */
+      do {  /* add continuation bytes */
+         buffer[MAXUTF8SEQ - (n++)] = cast_char(0x80 | (code & 0x3f));
+         code >>= 6;  /* remove added bits */
+         mfb >>= 1;  /* now there is one less bit available in first byte */
+      } while (code > mfb);  /* still needs continuation byte? */
+      buffer[MAXUTF8SEQ - n] = cast_char((~mfb << 1) | code);  /* add first byte */
+   }
+   return n;
 }
 
 static void pushutfchar (lua_State *L, int arg) {
@@ -159,8 +156,8 @@ static void pushutfchar (lua_State *L, int arg) {
   const size_t nchars = code_to_utf8(buf, code);
   lua_assert(nchars > 0);
   lua_assert(nchars < sizeof(buf));
-  buf[nchars] = 0;
-  lua_pushstring(L, buf);
+  buf[MAXUTF8SEQ] = 0;
+  lua_pushstring(L, &buf[MAXUTF8SEQ - nchars]);
 }
 
 
