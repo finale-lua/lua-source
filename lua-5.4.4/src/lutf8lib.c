@@ -4,10 +4,11 @@
 ** See Copyright Notice in lua.h
 */
 
-#define lutf8lib_lua52_c
+#define lutf8lib_c
 #define LUA_LIB
 
-#include "lutf8lib_lua52.h"
+#include "lprefix.h"
+
 
 #include <assert.h>
 #include <limits.h>
@@ -16,18 +17,13 @@
 
 #include "lua.h"
 
-#include "llimits.h"
 #include "lauxlib.h"
 #include "lualib.h"
 
 
-#define MAXUNICODE   0x10FFFF
-#define MAXUTF       0x7FFFFFFFu
-#define MAXUTF8SEQ   8
+#define MAXUNICODE	0x10FFFFu
 
-#ifndef cast_char // this is defined in 5.4 but not 5.2
-#define cast_char(i)   cast(char, (i))
-#endif
+#define MAXUTF		0x7FFFFFFFu
 
 /*
 ** Integer type for decoded UTF-8 values; MAXUTF needs 31 bits.
@@ -107,7 +103,7 @@ static int utflen (lua_State *L) {
   while (posi <= posj) {
     const char *s1 = utf8_decode(s + posi, NULL, !lax);
     if (s1 == NULL) {  /* conversion error? */
-      lua_pushnil(L);  /* return nil ... */
+      luaL_pushfail(L);  /* return fail ... */
       lua_pushinteger(L, posi + 1);  /* ... and current position */
       return 2;
     }
@@ -151,33 +147,11 @@ static int codepoint (lua_State *L) {
   return n;
 }
 
-static size_t code_to_utf8(char *const buffer, lua_Integer code)
-{
-   int n = 1;  /* number of bytes put in buffer (backwards) */
-   lua_assert(code <= MAXUTF);
-   if (code < 0x80)  /* ascii? */
-      buffer[MAXUTF8SEQ - 1] = cast_char(code);
-   else {  /* need continuation bytes */
-      unsigned int mfb = 0x3f;  /* maximum that fits in first byte */
-      do {  /* add continuation bytes */
-         buffer[MAXUTF8SEQ - (n++)] = cast_char(0x80 | (code & 0x3f));
-         code >>= 6;  /* remove added bits */
-         mfb >>= 1;  /* now there is one less bit available in first byte */
-      } while (code > mfb);  /* still needs continuation byte? */
-      buffer[MAXUTF8SEQ - n] = cast_char((~mfb << 1) | code);  /* add first byte */
-   }
-   return n;
-}
 
 static void pushutfchar (lua_State *L, int arg) {
   lua_Unsigned code = (lua_Unsigned)luaL_checkinteger(L, arg);
   luaL_argcheck(L, code <= MAXUTF, arg, "value out of range");
-  char buf[MAXUTF8SEQ+1];
-  const size_t nchars = code_to_utf8(buf, code);
-  lua_assert(nchars > 0);
-  lua_assert(nchars < sizeof(buf));
-  buf[MAXUTF8SEQ] = 0;
-  lua_pushstring(L, &buf[MAXUTF8SEQ - nchars]);
+  lua_pushfstring(L, "%U", (long)code);
 }
 
 
@@ -242,7 +216,7 @@ static int byteoffset (lua_State *L) {
   if (n == 0)  /* did it find given character? */
     lua_pushinteger(L, posi + 1);
   else  /* no such character */
-    lua_pushnil(L);
+    luaL_pushfail(L);
   return 1;
 }
 
@@ -303,7 +277,7 @@ static const luaL_Reg funcs[] = {
 };
 
 
-LUAMOD_API int luaopen_utf8_standalone (lua_State *L) {
+LUAMOD_API int luaopen_utf8 (lua_State *L) {
   luaL_newlib(L, funcs);
   lua_pushlstring(L, UTF8PATT, sizeof(UTF8PATT)/sizeof(char) - 1);
   lua_setfield(L, -2, "charpattern");
