@@ -64,8 +64,8 @@
 		B503E8782731F11000B4DB3A /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E83F2731F11000B4DB3A /* lbaselib.c */; };
 		B503E8792731F11000B4DB3A /* lstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E8402731F11000B4DB3A /* lstrlib.c */; };
 		B503E87A2731F11000B4DB3A /* lcorolib.c in Sources */ = {isa = PBXBuildFile; fileRef = B503E8412731F11000B4DB3A /* lcorolib.c */; };
-		B5E3A83B284CE09400F60696 /* lutf8lib_lua52.c in Sources */ = {isa = PBXBuildFile; fileRef = B5E3A839284CE09400F60696 /* lutf8lib_lua52.c */; };
-		B5E3A83C284CE09400F60696 /* lutf8lib_lua52.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E3A83A284CE09400F60696 /* lutf8lib_lua52.h */; };
+		B5F7F9B829B7A5B90084E86E /* lutf8lib_lua52.c in Sources */ = {isa = PBXBuildFile; fileRef = B5E3A839284CE09400F60696 /* lutf8lib_lua52.c */; };
+		B5F7F9B929B7A5BC0084E86E /* lutf8lib_lua52.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E3A83A284CE09400F60696 /* lutf8lib_lua52.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -260,7 +260,6 @@
 				B503E8682731F11000B4DB3A /* lctype.h in Headers */,
 				B503E8662731F11000B4DB3A /* lapi.h in Headers */,
 				B503E8482731F11000B4DB3A /* llimits.h in Headers */,
-				B5E3A83C284CE09400F60696 /* lutf8lib_lua52.h in Headers */,
 				B503E8512731F11000B4DB3A /* lfunc.h in Headers */,
 				B503E8542731F11000B4DB3A /* luaconf.h in Headers */,
 				B503E8692731F11000B4DB3A /* lualib.h in Headers */,
@@ -275,6 +274,7 @@
 				B503E8772731F11000B4DB3A /* lvm.h in Headers */,
 				B503E86C2731F11000B4DB3A /* llex.h in Headers */,
 				B503E84E2731F11000B4DB3A /* lundump.h in Headers */,
+				B5F7F9B929B7A5BC0084E86E /* lutf8lib_lua52.h in Headers */,
 				B503E85E2731F11000B4DB3A /* lparser.h in Headers */,
 				B503E8612731F11000B4DB3A /* lua.hpp in Headers */,
 				B503E8762731F11000B4DB3A /* lua.h in Headers */,
@@ -343,7 +343,6 @@
 				B503E84B2731F11000B4DB3A /* lctype.c in Sources */,
 				B503E8452731F11000B4DB3A /* lfunc.c in Sources */,
 				B503E8642731F11000B4DB3A /* lundump.c in Sources */,
-				B5E3A83B284CE09400F60696 /* lutf8lib_lua52.c in Sources */,
 				B503E8622731F11000B4DB3A /* lvm.c in Sources */,
 				B503E86A2731F11000B4DB3A /* lparser.c in Sources */,
 				B503E8462731F11000B4DB3A /* ltable.c in Sources */,
@@ -355,6 +354,7 @@
 				B503E85B2731F11000B4DB3A /* ltablib.c in Sources */,
 				B503E8712731F11000B4DB3A /* lbitlib.c in Sources */,
 				B503E8792731F11000B4DB3A /* lstrlib.c in Sources */,
+				B5F7F9B829B7A5B90084E86E /* lutf8lib_lua52.c in Sources */,
 				B503E84D2731F11000B4DB3A /* llex.c in Sources */,
 				B503E8652731F11000B4DB3A /* ldebug.c in Sources */,
 				B503E87A2731F11000B4DB3A /* lcorolib.c in Sources */,
