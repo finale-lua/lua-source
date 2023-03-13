@@ -27,6 +27,6 @@ ONLY_ACTIVE_ARCH = $(ONLY_ACTIVE_ARCH_$(CONFIGURATION))
 // Current minimum plugin target OS (not actually used by Lua, so just needs to be low enough to prevent warnings)
 MACOSX_DEPLOYMENT_TARGET = 10.13
 
-LUA_VERSION = 5.2.4
+LUA_VERSION = 5.4.4
 
 USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lua-$(LUA_VERSION)/src"

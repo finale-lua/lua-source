@@ -209,14 +209,3 @@ function eachstaff(region)
         end
     end
 end
-
---[[
--- replacement for known bit32 functions in the Finale lua world that uses Lua 5.2
--- uncomment if we ever update to Lua 5.3 or higher.
-bit32 = {
-   band = function(x, y) return x & y end,
-   bor = function(x, y) return x | y end,
-   rshift = function(x, y) return x >> y end,
-   lshift = function(x, y) return x << y end
-}
-]]
