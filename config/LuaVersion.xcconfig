@@ -1,0 +1,11 @@
+//
+//  LuaVersion.xcconfig
+//  Lua
+//
+//  Created by Robert Patterson on 3/13/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+LUA_VERSION = 5.2.4

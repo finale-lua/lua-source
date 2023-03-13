@@ -43,10 +43,11 @@
 		B5C847FE28B4FFE00057B99B /* socket.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socket.lua; sourceTree = "<group>"; };
 		B5D2E7AD2714841300414D2D /* socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket.h; sourceTree = "<group>"; };
 		B5D2E7AF2714843700414D2D /* pierror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pierror.h; sourceTree = "<group>"; };
+		B5E23BBD29BFC9C40007AA46 /* LuaVersion.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LuaVersion.xcconfig; sourceTree = "<group>"; };
+		B5E23BBE29BFC9C40007AA46 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		B5E23BBF29BFC9C40007AA46 /* ReleaseAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseAll.xcconfig; sourceTree = "<group>"; };
+		B5E23BC029BFC9C40007AA46 /* DebugAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugAll.xcconfig; sourceTree = "<group>"; };
 		B5EE21C32711F8EE00596BBE /* libsocket-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libsocket-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5EE21CB2711F92500596BBE /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
-		B5EE21CC2711F92500596BBE /* DebugAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugAll.xcconfig; sourceTree = "<group>"; };
-		B5EE21CD2711F92500596BBE /* ReleaseAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseAll.xcconfig; sourceTree = "<group>"; };
 		B5EE21CF2711F9B200596BBE /* select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = select.h; sourceTree = "<group>"; };
 		B5EE21D02711F9B200596BBE /* usocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usocket.c; sourceTree = "<group>"; };
 		B5EE21D12711F9B200596BBE /* options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = options.c; sourceTree = "<group>"; };
@@ -114,11 +115,13 @@
 		B5EE21CA2711F90700596BBE /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				B5EE21CC2711F92500596BBE /* DebugAll.xcconfig */,
-				B5EE21CD2711F92500596BBE /* ReleaseAll.xcconfig */,
-				B5EE21CB2711F92500596BBE /* Shared.xcconfig */,
+				B5E23BC029BFC9C40007AA46 /* DebugAll.xcconfig */,
+				B5E23BBD29BFC9C40007AA46 /* LuaVersion.xcconfig */,
+				B5E23BBF29BFC9C40007AA46 /* ReleaseAll.xcconfig */,
+				B5E23BBE29BFC9C40007AA46 /* Shared.xcconfig */,
 			);
 			name = Config;
+			path = config;
 			sourceTree = SOURCE_ROOT;
 		};
 		B5EE21CE2711F96000596BBE /* Source */ = {
@@ -259,7 +262,7 @@
 /* Begin XCBuildConfiguration section */
 		B5EE21C52711F8EE00596BBE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5EE21CC2711F92500596BBE /* DebugAll.xcconfig */;
+			baseConfigurationReference = B5E23BC029BFC9C40007AA46 /* DebugAll.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -318,7 +321,7 @@
 		};
 		B5EE21C62711F8EE00596BBE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5EE21CD2711F92500596BBE /* ReleaseAll.xcconfig */;
+			baseConfigurationReference = B5E23BBF29BFC9C40007AA46 /* ReleaseAll.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <LuaVersion>5.2.4</LuaVersion>
     <LuaDir>$(ProjectDir)\..\lua-$(LuaVersion)\src</LuaDir>
   </PropertyGroup>
   <PropertyGroup>
@@ -17,9 +16,6 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <BuildMacro Include="LuaVersion">
-      <Value>$(LuaVersion)</Value>
-    </BuildMacro>
     <BuildMacro Include="LuaDir">
       <Value>$(LuaDir)</Value>
     </BuildMacro>

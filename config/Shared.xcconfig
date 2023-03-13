@@ -4,11 +4,12 @@
 //  Created by Robert Patterson on 09/08/2021.
 //
 //
+#include "LuaVersion.xcconfig"
 
-GCC_PREPROCESSOR_DEFINITIONS_All = LUA_USE_MACOSX
+GCC_PREPROCESSOR_DEFINITIONS_All = LUA_USE_MACOSX LUA_FLOORN2I=F2Ifloor
 
-// Lua 5.4.3 needs these warnings softened
-GCC_WARN_UNINITIALIZED_AUTOS = YES
+// Lua 5.4 needs these warnings softened
+GCC_WARN_UNINITIALIZED_AUTOS = NO
 GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO
 
 DEAD_CODE_STRIPPING = YES
@@ -26,7 +27,5 @@ ONLY_ACTIVE_ARCH = $(ONLY_ACTIVE_ARCH_$(CONFIGURATION))
 
 // Current minimum plugin target OS (not actually used by Lua, so just needs to be low enough to prevent warnings)
 MACOSX_DEPLOYMENT_TARGET = 10.13
-
-LUA_VERSION = 5.4.4
 
 USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lua-$(LUA_VERSION)/src"
