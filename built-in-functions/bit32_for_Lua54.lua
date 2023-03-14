@@ -16,7 +16,7 @@ function bit32.bor(...)
   for i = 1, select("#", ...) do
     result = result | select(i, ...)
   end
-  return result
+  return result & 0xFFFFFFFF
 end
 
 function bit32.bnot(n)
@@ -36,7 +36,7 @@ function bit32.lshift(n, shift)
 end
 
 function bit32.rshift(n, shift)
-  return (n >> shift) & 0xFFFFFFFF
+  return (n & 0xFFFFFFFF) >> shift
 end
 
 function bit32.arshift(n, shift)
@@ -56,23 +56,25 @@ end
 function bit32.extract(n, field, width)
   width = width or 1
   local mask = 2^width - 1
-  return (n >> field) & mask
+  return ((n >> field) & mask) & 0xFFFFFFFF
 end
 
 function bit32.replace(n, v, field, width)
   width = width or 1
   local mask = ~(2^(width + field) - 2^field)
-  return (n & mask) | ((v << field) & ~mask)
+  return ((n & mask) | ((v << field) & ~mask)) & 0xFFFFFFFF
 end
 
 function bit32.lrotate(n, shift)
   shift = shift & 31 -- equivalent to shift % 32
-  return ((n << shift) | (n >> (32 - shift))) & 0xFFFFFFFF
+  local n32 = n & 0xFFFFFFFF
+  return ((n32 << shift) | (n32 >> (32 - shift))) & 0xFFFFFFFF
 end
 
 function bit32.rrotate(n, shift)
   shift = shift & 31 -- equivalent to shift % 32
-  return ((n >> shift) | (n << (32 - shift))) & 0xFFFFFFFF
+  local n32 = n & 0xFFFFFFFF
+  return ((n32 >> shift) | (n32 << (32 - shift))) & 0xFFFFFFFF
 end
 
 return bit32
