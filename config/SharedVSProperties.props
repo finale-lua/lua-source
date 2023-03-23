@@ -11,8 +11,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/DLUA_FLOORN2I=F2Ifloor %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;LUA_FLOORN2I=F2Ifloor;LUA_COMPAT_MATHLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
