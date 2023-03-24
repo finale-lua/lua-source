@@ -1,0 +1,12 @@
+//
+//  Lua-CJSON.xcconfig
+//  lua-cjson
+//
+//  Created by Robert Patterson on 3/23/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GCC_WARN_64_TO_32_BIT_CONVERSION = NO
+CLANG_WARN_STRICT_PROTOTYPES = NO
