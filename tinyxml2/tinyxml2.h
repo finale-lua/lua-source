@@ -1725,7 +1725,9 @@ class TINYXML2_LIB XMLDocument : public XMLNode
     friend class XMLUnknown;
 public:
     /// constructor
-    XMLDocument( bool processEntities = true, Whitespace whitespaceMode = PRESERVE_WHITESPACE );
+    XMLDocument( bool processEntities, Whitespace whitespaceMode = PRESERVE_WHITESPACE );
+// Finale Lua change: Lua-friendly constructor
+    XMLDocument();
     ~XMLDocument();
 
     virtual XMLDocument* ToDocument()				{
@@ -1791,6 +1793,15 @@ public:
     Whitespace WhitespaceMode() const	{
         return _whitespaceMode;
     }
+    
+// Finale Lua change: add setters in lieu of setting in the ctor
+    void SetProcessEntities(bool val)   {
+        _processEntities = val;
+    }
+    void SetWhitespaceMode(Whitespace val) {
+        _whitespaceMode = val;
+    }
+
 
     /**
     	Returns true if this document has a leading Byte Order Mark of UTF8.
