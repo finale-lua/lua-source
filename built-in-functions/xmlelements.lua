@@ -11,6 +11,7 @@ function xmlelements(node, nodename)
 end
 
 function xmlattributes(node)
+    node = node and node:ToElement() or nil
     local attr = node and node:FirstAttribute() or nil
     return function()
         local current_attr = attr
@@ -24,9 +25,11 @@ end
 function xml2table(node, options)
     options = options or {}
     if type(options) ~= "table" then
-        error ("xml2table received options that were not in a table.", 1)
+        error ("bad argument 2 to xml2table (table expected)", 2)
     end
     if not node then return "" end
+    local booltrue = options.boolyesno and "yes" or "true"
+    local boolfalse = options.boolyesno and "no" or "false"
     local retval
     local function retval_to_table()
         if not retval then retval = {} end
@@ -35,13 +38,15 @@ function xml2table(node, options)
         end
     end
     local function getval(val)
-        if not options.usenumbers then
+        if options.usestrings or type(val) ~= "string" then
             return val
         end
-        val_as_number = tonumber(val)
+        local val_as_number = tonumber(val)
         if val_as_number then
             return val_as_number
         end
+        if val:lower() == booltrue then return true end
+        if val:lower() == boolfalse then return false end
         return val
     end
     local element = node:ToElement() -- in case node is an XMLHandle
@@ -57,15 +62,18 @@ function xml2table(node, options)
     for child in xmlelements(node) do
         retval_to_table()
         local name = child:Name()
-        if not retval[name] then
-            retval[name] = xml2table(child, options)
-        else
-            if not gotmulti then
-                retval[name] = { retval[name] }
+        local childtab = xml2table(child, options)
+        if childtab ~= nil then
+            if retval[name] == nil then
+                retval[name] = childtab
+            else
+                if not gotmulti then
+                    retval[name] = { retval[name] }
+                end
+                table.insert(retval[name], childtab)
+                gotmulti = true
             end
-            table.insert(retval[name], xml2table(child, options))
-            gotmulti = true
         end
     end
-    return retval or ""
+    return retval
 end
