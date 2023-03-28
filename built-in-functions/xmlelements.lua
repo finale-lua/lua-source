@@ -45,8 +45,8 @@ function xml2table(node, options)
         if val_as_number then
             return val_as_number
         end
-        if val:lower() == booltrue then return true end
-        if val:lower() == boolfalse then return false end
+        if val == booltrue then return true end
+        if val == boolfalse then return false end
         return val
     end
     local element = node:ToElement() -- in case node is an XMLHandle
