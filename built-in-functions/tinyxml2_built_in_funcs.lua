@@ -114,7 +114,7 @@ function table2xml(t, node, options)
             if type(v) ~= "table" then
                 return "value for attributes is not a table."
             end
-            for attr_name, attr_value in pairs(v) do
+            for attr_name, attr_value in pairsbykeys(v) do
                 if type(attr_value) == "boolean" then
                     if options.boolyesno then
                         node:SetAttribute(attr_name, attr_value and "yes" or "no")
