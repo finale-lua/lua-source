@@ -3,12 +3,16 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <LuaVersion>5.2.4</LuaVersion>
+    <LuaBridgeVersion>LuaBridge2</LuaBridgeVersion>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
   <ItemGroup>
     <BuildMacro Include="LuaVersion">
       <Value>$(LuaVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LuaBridgeVersion">
+      <Value>$(LuaBridgeVersion)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
