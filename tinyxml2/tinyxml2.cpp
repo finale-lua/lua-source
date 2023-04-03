@@ -2639,6 +2639,35 @@ XMLPrinter::XMLPrinter( FILE* file, bool compact, int depth ) :
     _buffer.Push( 0 );
 }
 
+// Finale Lua change: Lua-friendly constructor
+
+XMLPrinter::XMLPrinter() :
+    _elementJustOpened( false ),
+    _stack(),
+    _firstElement( true ),
+    _fp( 0 ),
+    _depth( 0 ),
+    _textDepth( -1 ),
+    _processEntities( true ),
+    _compactMode( false ),
+    _buffer()
+{
+    for( int i=0; i<ENTITY_RANGE; ++i ) {
+        _entityFlag[i] = false;
+        _restrictedEntityFlag[i] = false;
+    }
+    for( int i=0; i<NUM_ENTITIES; ++i ) {
+        const char entityValue = entities[i].value;
+        const unsigned char flagIndex = static_cast<unsigned char>(entityValue);
+        TIXMLASSERT( flagIndex < ENTITY_RANGE );
+        _entityFlag[flagIndex] = true;
+    }
+    _restrictedEntityFlag[static_cast<unsigned char>('&')] = true;
+    _restrictedEntityFlag[static_cast<unsigned char>('<')] = true;
+    _restrictedEntityFlag[static_cast<unsigned char>('>')] = true;    // not required, but consistency is nice
+    _buffer.Push( 0 );
+}
+
 
 void XMLPrinter::Print( const char* format, ... )
 {

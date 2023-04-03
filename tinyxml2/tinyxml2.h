@@ -1793,15 +1793,6 @@ public:
     Whitespace WhitespaceMode() const	{
         return _whitespaceMode;
     }
-    
-// Finale Lua change: add setters in lieu of setting in the ctor
-    void SetProcessEntities(bool val)   {
-        _processEntities = val;
-    }
-    void SetWhitespaceMode(Whitespace val) {
-        _whitespaceMode = val;
-    }
-
 
     /**
     	Returns true if this document has a leading Byte Order Mark of UTF8.
@@ -2254,8 +2245,11 @@ public:
     	If 'compact' is set to true, then output is created
     	with only required whitespace and newlines.
     */
-    XMLPrinter( FILE* file=0, bool compact = false, int depth = 0 );
+    XMLPrinter( FILE* file, bool compact = false, int depth = 0 );
     virtual ~XMLPrinter()	{}
+    
+    // Finale Lua change: Lua-friendly constructor
+    XMLPrinter();
 
     /** If streaming, write the BOM and declaration. */
     void PushHeader( bool writeBOM, bool writeDeclaration );
