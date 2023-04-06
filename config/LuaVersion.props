@@ -4,6 +4,7 @@
   <PropertyGroup Label="UserMacros">
     <LuaVersion>5.2.4</LuaVersion>
     <LuaBridgeVersion>LuaBridge2</LuaBridgeVersion>
+    <LuaBridgeVersion>LuaBridge3</LuaBridgeVersion>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
