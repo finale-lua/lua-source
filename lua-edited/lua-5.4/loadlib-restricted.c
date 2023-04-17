@@ -1,3 +1,9 @@
+/* **********************************/
+/* EDITED FOR RGP LUA (minimally)   */
+/* compare to Lua 5.4.2 for diffs   */
+/* **********************************/
+
+
 /*
 ** $Id: loadlib.c $
 ** Dynamic library loader for Lua
@@ -22,6 +28,8 @@
 
 #include "lauxlib.h"
 #include "lualib.h"
+
+#include "loadlib-restricted.h"
 
 
 /*
@@ -101,7 +109,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym);
 
 
 
-#if defined(LUA_USE_DLOPEN)	/* { */
+#if 0 //defined(LUA_USE_DLOPEN)	/* { */
 /*
 ** {========================================================================
 ** This is an implementation of loadlib based on the dlfcn interface.
@@ -149,7 +157,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym) {
 
 
 
-#elif defined(LUA_DL_DLL)	/* }{ */
+#elif 0 //defined(LUA_DL_DLL)	/* }{ */
 /*
 ** {======================================================================
 ** This is an implementation of loadlib for Windows using native functions.
@@ -234,7 +242,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym) {
 #define LIB_FAIL	"absent"
 
 
-#define DLMSG	"dynamic libraries not enabled; check your Lua installation"
+#define DLMSG	"trusted code is required to open dynamic libraries"
 
 
 static void lsys_unloadlib (void *lib) {
@@ -736,7 +744,7 @@ static void createclibstable (lua_State *L) {
 }
 
 
-LUAMOD_API int luaopen_package (lua_State *L) {
+LUAMOD_API int luaopen_package_restricted (lua_State *L) {
   createclibstable(L);
   luaL_newlib(L, pk_funcs);  /* create 'package' table */
   createsearcherstable(L);
