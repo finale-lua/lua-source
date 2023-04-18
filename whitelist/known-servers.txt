@@ -1,0 +1,8 @@
+#
+# Whitelist of trusted websites for RGP Lua.
+# Scripts downloaded from these websites are trusted by the plugin.
+#
+
+https://github.com/finale-lua/lua-scripts
+https://robertgpatterson.com
+
