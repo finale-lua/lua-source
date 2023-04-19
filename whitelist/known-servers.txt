@@ -3,6 +3,4 @@
 # Scripts downloaded from these websites are trusted by the plugin.
 #
 
-https://github.com/finale-lua/lua-scripts
-https://robertgpatterson.com
-
+https://raw.githubusercontent.com/finale-lua/lua-scripts
