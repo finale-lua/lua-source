@@ -9,3 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 LUA_VERSION = 5.4.4
+LUABRIDGE_VERSION = LuaBridge3
+

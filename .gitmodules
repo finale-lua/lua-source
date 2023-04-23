@@ -1,3 +1,12 @@
 [submodule "luasocket"]
 	path = luasocket
 	url = git@github.com:lunarmodules/luasocket.git
+[submodule "lua-cjson"]
+	path = lua-cjson
+	url = git@github.com:mpx/lua-cjson.git
+[submodule "LuaBridge2"]
+	path = LuaBridge2
+	url = git@github.com:vinniefalco/LuaBridge.git
+[submodule "LuaBridge3"]
+	path = LuaBridge3
+	url = git@github.com:kunitoki/LuaBridge3.git

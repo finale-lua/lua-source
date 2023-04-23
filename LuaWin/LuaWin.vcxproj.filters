@@ -16,9 +16,6 @@
     <Filter Include="Source Files\src">
       <UniqueIdentifier>{5f8aa0b4-0797-4ddb-befb-b7dbd97a4ef6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="utf8-lua52">
-      <UniqueIdentifier>{01a35a15-3d83-42e7-a89a-e8fe5e0e1feb}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -26,9 +23,6 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\utf8-lua52\lutf8lib_lua52.h">
-      <Filter>utf8-lua52</Filter>
     </ClInclude>
     <ClInclude Include="..\lua-5.4.4\src\lapi.h">
       <Filter>Source Files\src</Filter>
@@ -118,9 +112,6 @@
   <ItemGroup>
     <ClCompile Include="pch.c">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\utf8-lua52\lutf8lib_lua52.c">
-      <Filter>utf8-lua52</Filter>
     </ClCompile>
     <ClCompile Include="..\lua-5.4.4\src\lapi.c">
       <Filter>Source Files\src</Filter>

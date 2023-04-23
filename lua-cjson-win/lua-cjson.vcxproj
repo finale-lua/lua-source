@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bfa6ffb3-ddd2-4117-9dc0-14b42b324be8}</ProjectGuid>
-    <RootNamespace>socketstatic</RootNamespace>
+    <ProjectGuid>{1D573FAE-346E-439F-9982-83D542EF00C2}</ProjectGuid>
+    <RootNamespace>luacjson</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -43,14 +43,14 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -61,21 +61,25 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\LuaVersion.props" />
     <Import Project="..\config\SharedVSProperties.props" />
+    <Import Project="..\config\Lua-CJSON.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\LuaVersion.props" />
     <Import Project="..\config\SharedVSProperties.props" />
+    <Import Project="..\config\Lua-CJSON.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\LuaVersion.props" />
     <Import Project="..\config\SharedVSProperties.props" />
+    <Import Project="..\config\Lua-CJSON.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\LuaVersion.props" />
     <Import Project="..\config\SharedVSProperties.props" />
+    <Import Project="..\config\Lua-CJSON.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -159,38 +163,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\luasocket\src\auxiliar.h" />
-    <ClInclude Include="..\luasocket\src\buffer.h" />
-    <ClInclude Include="..\luasocket\src\except.h" />
-    <ClInclude Include="..\luasocket\src\inet.h" />
-    <ClInclude Include="..\luasocket\src\io.h" />
-    <ClInclude Include="..\luasocket\src\luasocket.h" />
-    <ClInclude Include="..\luasocket\src\mime.h" />
-    <ClInclude Include="..\luasocket\src\options.h" />
-    <ClInclude Include="..\luasocket\src\pierror.h" />
-    <ClInclude Include="..\luasocket\src\select.h" />
-    <ClInclude Include="..\luasocket\src\socket.h" />
-    <ClInclude Include="..\luasocket\src\tcp.h" />
-    <ClInclude Include="..\luasocket\src\timeout.h" />
-    <ClInclude Include="..\luasocket\src\udp.h" />
-    <ClInclude Include="..\luasocket\src\wsocket.h" />
+    <ClInclude Include="..\lua-cjson\fpconv.h" />
+    <ClInclude Include="..\lua-cjson\strbuf.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\luasocket\src\auxiliar.c" />
-    <ClCompile Include="..\luasocket\src\buffer.c" />
-    <ClCompile Include="..\luasocket\src\except.c" />
-    <ClCompile Include="..\luasocket\src\inet.c" />
-    <ClCompile Include="..\luasocket\src\io.c" />
-    <ClCompile Include="..\luasocket\src\luasocket.c" />
-    <ClCompile Include="..\luasocket\src\mime.c" />
-    <ClCompile Include="..\luasocket\src\options.c" />
-    <ClCompile Include="..\luasocket\src\select.c" />
-    <ClCompile Include="..\luasocket\src\tcp.c" />
-    <ClCompile Include="..\luasocket\src\timeout.c" />
-    <ClCompile Include="..\luasocket\src\udp.c" />
-    <ClCompile Include="..\luasocket\src\wsocket.c" />
+    <ClCompile Include="..\lua-cjson\fpconv.c" />
+    <ClCompile Include="..\lua-cjson\lua_cjson.c" />
+    <ClCompile Include="..\lua-cjson\strbuf.c" />
     <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

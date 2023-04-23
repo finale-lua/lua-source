@@ -117,7 +117,6 @@
     <ClInclude Include="..\lua-5.4.4\src\lundump.h" />
     <ClInclude Include="..\lua-5.4.4\src\lvm.h" />
     <ClInclude Include="..\lua-5.4.4\src\lzio.h" />
-    <ClInclude Include="..\utf8-lua52\lutf8lib_lua52.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -154,7 +153,6 @@
     <ClCompile Include="..\lua-5.4.4\src\lutf8lib.c" />
     <ClCompile Include="..\lua-5.4.4\src\lvm.c" />
     <ClCompile Include="..\lua-5.4.4\src\lzio.c" />
-    <ClCompile Include="..\utf8-lua52\lutf8lib_lua52.c" />
     <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
