@@ -1088,7 +1088,7 @@ char* XMLNode::ParseDeep( char* p, StrPair* parentEndTag, int* curLineNumPtr )
         StrPair endTag;
         p = node->ParseDeep( p, &endTag, curLineNumPtr );
         if ( !p ) {
-            _document->DeleteNode( node );
+            DeleteNode( node );
             if ( !_document->Error() ) {
                 _document->SetError( XML_ERROR_PARSING, initialLineNum, 0);
             }
@@ -1121,7 +1121,7 @@ char* XMLNode::ParseDeep( char* p, StrPair* parentEndTag, int* curLineNumPtr )
             }
             if ( !wellLocated ) {
                 _document->SetError( XML_ERROR_PARSING_DECLARATION, initialLineNum, "XMLDeclaration value=%s", decl->Value());
-                _document->DeleteNode( node );
+                DeleteNode( node );
                 break;
             }
         }
@@ -1156,7 +1156,7 @@ char* XMLNode::ParseDeep( char* p, StrPair* parentEndTag, int* curLineNumPtr )
             }
             if ( mismatch ) {
                 _document->SetError( XML_ERROR_MISMATCHED_ELEMENT, initialLineNum, "XMLElement name=%s", ele->Name());
-                _document->DeleteNode( node );
+                DeleteNode( node );
                 break;
             }
         }
@@ -2181,28 +2181,6 @@ XMLDocument::XMLDocument( bool processEntities, Whitespace whitespaceMode ) :
     _document = this;
 }
 
-// Finale Lua change: Lua-friendly constructor
-XMLDocument::XMLDocument() :
-    XMLNode( 0 ),
-    _writeBOM( false ),
-    _processEntities( true ),
-    _errorID(XML_SUCCESS),
-    _whitespaceMode( PRESERVE_WHITESPACE ),
-    _errorStr(),
-    _errorLineNum( 0 ),
-    _charBuffer( 0 ),
-    _parseCurLineNum( 0 ),
-    _parsingDepth(0),
-    _unlinked(),
-    _elementPool(),
-    _attributePool(),
-    _textPool(),
-    _commentPool()
-{
-    // avoid VC++ C4355 warning about 'this' in initializer list (C4355 is off by default in VS2012+)
-    _document = this;
-}
-
 
 XMLDocument::~XMLDocument()
 {
@@ -2636,35 +2614,6 @@ XMLPrinter::XMLPrinter( FILE* file, bool compact, int depth ) :
     _restrictedEntityFlag[static_cast<unsigned char>('&')] = true;
     _restrictedEntityFlag[static_cast<unsigned char>('<')] = true;
     _restrictedEntityFlag[static_cast<unsigned char>('>')] = true;	// not required, but consistency is nice
-    _buffer.Push( 0 );
-}
-
-// Finale Lua change: Lua-friendly constructor
-
-XMLPrinter::XMLPrinter() :
-    _elementJustOpened( false ),
-    _stack(),
-    _firstElement( true ),
-    _fp( 0 ),
-    _depth( 0 ),
-    _textDepth( -1 ),
-    _processEntities( true ),
-    _compactMode( false ),
-    _buffer()
-{
-    for( int i=0; i<ENTITY_RANGE; ++i ) {
-        _entityFlag[i] = false;
-        _restrictedEntityFlag[i] = false;
-    }
-    for( int i=0; i<NUM_ENTITIES; ++i ) {
-        const char entityValue = entities[i].value;
-        const unsigned char flagIndex = static_cast<unsigned char>(entityValue);
-        TIXMLASSERT( flagIndex < ENTITY_RANGE );
-        _entityFlag[flagIndex] = true;
-    }
-    _restrictedEntityFlag[static_cast<unsigned char>('&')] = true;
-    _restrictedEntityFlag[static_cast<unsigned char>('<')] = true;
-    _restrictedEntityFlag[static_cast<unsigned char>('>')] = true;    // not required, but consistency is nice
     _buffer.Push( 0 );
 }
 

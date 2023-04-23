@@ -1725,9 +1725,7 @@ class TINYXML2_LIB XMLDocument : public XMLNode
     friend class XMLUnknown;
 public:
     /// constructor
-    XMLDocument( bool processEntities, Whitespace whitespaceMode = PRESERVE_WHITESPACE );
-// Finale Lua change: Lua-friendly constructor
-    XMLDocument();
+    XMLDocument( bool processEntities = true, Whitespace whitespaceMode = PRESERVE_WHITESPACE );
     ~XMLDocument();
 
     virtual XMLDocument* ToDocument()				{
@@ -2245,11 +2243,8 @@ public:
     	If 'compact' is set to true, then output is created
     	with only required whitespace and newlines.
     */
-    XMLPrinter( FILE* file, bool compact = false, int depth = 0 );
+    XMLPrinter( FILE* file=0, bool compact = false, int depth = 0 );
     virtual ~XMLPrinter()	{}
-    
-    // Finale Lua change: Lua-friendly constructor
-    XMLPrinter();
 
     /** If streaming, write the BOM and declaration. */
     void PushHeader( bool writeBOM, bool writeDeclaration );
