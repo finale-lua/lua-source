@@ -2343,16 +2343,14 @@ void XMLDocument::DeleteNode( XMLNode* node )	{
 // Finale change: convert string to wchar_t for Windows
 inline std::basic_string<wchar_t> charToWCHAR(const char* inpstr)
 {
-    std::basic_string<wchar_t> result();
+    std::basic_string<wchar_t> result;
     UINT cp = CP_UTF8;
     int size = MultiByteToWideChar(cp, MB_ERR_INVALID_CHARS, inpstr, -1, nullptr, 0) - 1; // remove null-terminator
-    if (size <= 0)
-    {
+    if (size <= 0) {
         cp = CP_ACP;
         size = MultiByteToWideChar(cp, 0, inpstr, -1, nullptr, 0) - 1;
     }
-    if (size > 0)
-    {
+    if (size > 0) {
         result.resize(size);
         MultiByteToWideChar(cp, 0, inpstr, -1, result.data(), size);
     }
