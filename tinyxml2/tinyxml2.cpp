@@ -22,6 +22,10 @@ distribution.
 */
 
 #include "tinyxml2.h"
+#ifdef _WIN32
+// Finale change: need UTF-8/UTF-16 conversion
+#include <string>
+#endif // _WIN32
 
 #include <new>		// yes, this one new style header, is in the Android SDK.
 #if defined(ANDROID_NDK) || defined(__BORLANDC__) || defined(__QNXNTO__)
