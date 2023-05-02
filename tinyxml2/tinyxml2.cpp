@@ -22,10 +22,10 @@ distribution.
 */
 
 #include "tinyxml2.h"
-#if OPERATING_SYSTEM == WINDOWS
+#ifdef _WIN32
 // Finale change: need UTF-8/UTF-16 conversion
-#include "finaleframework.h"
-#endif // OPERATING_SYSTEM == WINDOWS
+#include <string>
+#endif // _WIN32
 
 #include <new>		// yes, this one new style header, is in the Android SDK.
 #if defined(ANDROID_NDK) || defined(__BORLANDC__) || defined(__QNXNTO__)
@@ -2181,28 +2181,6 @@ XMLDocument::XMLDocument( bool processEntities, Whitespace whitespaceMode ) :
     _document = this;
 }
 
-// Finale Lua change: Lua-friendly constructor
-XMLDocument::XMLDocument() :
-    XMLNode( 0 ),
-    _writeBOM( false ),
-    _processEntities( true ),
-    _errorID(XML_SUCCESS),
-    _whitespaceMode( PRESERVE_WHITESPACE ),
-    _errorStr(),
-    _errorLineNum( 0 ),
-    _charBuffer( 0 ),
-    _parseCurLineNum( 0 ),
-    _parsingDepth(0),
-    _unlinked(),
-    _elementPool(),
-    _attributePool(),
-    _textPool(),
-    _commentPool()
-{
-    // avoid VC++ C4355 warning about 'this' in initializer list (C4355 is off by default in VS2012+)
-    _document = this;
-}
-
 
 XMLDocument::~XMLDocument()
 {
@@ -2326,7 +2304,7 @@ static FILE* callfopen( const char* filepath, const char* mode )
 }
 
 // Finale change: Unicode support on Windows
-#if OPERATING_SYSTEM == WINDOWS
+#ifdef _WIN32
 static FILE* callwfopen(const wchar_t* filepath, const wchar_t* mode)
 {
     TIXMLASSERT(filepath);
@@ -2342,7 +2320,7 @@ static FILE* callwfopen(const wchar_t* filepath, const wchar_t* mode)
 #endif
     return fp;
 }
-#endif // OPERATING_SYSTEM == WINDOWS
+#endif // _WIN32
 
 void XMLDocument::DeleteNode( XMLNode* node )	{
     TIXMLASSERT( node );
@@ -2361,6 +2339,24 @@ void XMLDocument::DeleteNode( XMLNode* node )	{
     }
 }
 
+#ifdef _WIN32
+// Finale change: convert string to wchar_t for Windows
+inline std::basic_string<wchar_t> charToWCHAR(const char* inpstr)
+{
+    std::basic_string<wchar_t> result;
+    UINT cp = CP_UTF8;
+    int size = MultiByteToWideChar(cp, MB_ERR_INVALID_CHARS, inpstr, -1, nullptr, 0) - 1; // remove null-terminator
+    if (size <= 0) {
+        cp = CP_ACP;
+        size = MultiByteToWideChar(cp, 0, inpstr, -1, nullptr, 0) - 1;
+    }
+    if (size > 0) {
+        result.resize(size);
+        MultiByteToWideChar(cp, 0, inpstr, -1, result.data(), size);
+    }
+    return result;
+}
+#endif
 
 XMLError XMLDocument::LoadFile( const char* filename )
 {
@@ -2371,14 +2367,12 @@ XMLError XMLDocument::LoadFile( const char* filename )
     }
 
     Clear();
-#if OPERATING_SYSTEM == WINDOWS
+#ifdef _WIN32
     // Finale change: Need to convert UTF-8 to UTF-16 on Windows
-    FCString utf8name;
-    utf8name.SetUTF8String(filename);
-    FILE* fp = callwfopen((const wchar_t*)utf8name._GetUnicodeBuffer(), L"rb");
+    FILE* fp = callwfopen(charToWCHAR(filename).c_str(), L"rb");
 #else
     FILE* fp = callfopen( filename, "rb" );
-#endif // OPERATING_SYSTEM == WINDOWS
+#endif // _WIN32
     if ( !fp ) {
         SetError( XML_ERROR_FILE_NOT_FOUND, 0, "filename=%s", filename );
         return _errorID;
@@ -2450,14 +2444,12 @@ XMLError XMLDocument::SaveFile( const char* filename, bool compact )
         return _errorID;
     }
 
-#if OPERATING_SYSTEM == WINDOWS
+#ifdef _WIN32
     // Finale change: Need to convert UTF-8 to UTF-16 on Windows
-    FCString utf8name;
-    utf8name.SetUTF8String(filename);
-    FILE* fp = callwfopen((const wchar_t*)utf8name._GetUnicodeBuffer(), L"w");
+    FILE* fp = callwfopen(charToWCHAR(filename).c_str(), L"w");
 #else
     FILE* fp = callfopen(filename, "w");
-#endif // OPERATING_SYSTEM == WINDOWS
+#endif // _WIN32
 
     if ( !fp ) {
         SetError( XML_ERROR_FILE_COULD_NOT_BE_OPENED, 0, "filename=%s", filename );
@@ -2636,35 +2628,6 @@ XMLPrinter::XMLPrinter( FILE* file, bool compact, int depth ) :
     _restrictedEntityFlag[static_cast<unsigned char>('&')] = true;
     _restrictedEntityFlag[static_cast<unsigned char>('<')] = true;
     _restrictedEntityFlag[static_cast<unsigned char>('>')] = true;	// not required, but consistency is nice
-    _buffer.Push( 0 );
-}
-
-// Finale Lua change: Lua-friendly constructor
-
-XMLPrinter::XMLPrinter() :
-    _elementJustOpened( false ),
-    _stack(),
-    _firstElement( true ),
-    _fp( 0 ),
-    _depth( 0 ),
-    _textDepth( -1 ),
-    _processEntities( true ),
-    _compactMode( false ),
-    _buffer()
-{
-    for( int i=0; i<ENTITY_RANGE; ++i ) {
-        _entityFlag[i] = false;
-        _restrictedEntityFlag[i] = false;
-    }
-    for( int i=0; i<NUM_ENTITIES; ++i ) {
-        const char entityValue = entities[i].value;
-        const unsigned char flagIndex = static_cast<unsigned char>(entityValue);
-        TIXMLASSERT( flagIndex < ENTITY_RANGE );
-        _entityFlag[flagIndex] = true;
-    }
-    _restrictedEntityFlag[static_cast<unsigned char>('&')] = true;
-    _restrictedEntityFlag[static_cast<unsigned char>('<')] = true;
-    _restrictedEntityFlag[static_cast<unsigned char>('>')] = true;    // not required, but consistency is nice
     _buffer.Push( 0 );
 }
 
