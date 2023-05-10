@@ -242,7 +242,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym) {
 #define LIB_FAIL	"absent"
 
 
-#define DLMSG	"trusted code is required to open dynamic libraries"
+#define DLMSG	"the current permissions environment does not allow opening dynamic libraries"
 
 
 static void lsys_unloadlib (void *lib) {
