@@ -1,6 +1,6 @@
 /* **********************************/
 /* EDITED FOR RGP LUA (minimally)   */
-/* compare to Lua 5.4.2 for diffs   */
+/* compare to Lua 5.4.6 for diffs   */
 /* **********************************/
 
 
@@ -716,8 +716,13 @@ static const luaL_Reg ll_funcs[] = {
 
 
 static void createsearcherstable (lua_State *L) {
-  static const lua_CFunction searchers[] =
-    {searcher_preload, searcher_Lua, searcher_C, searcher_Croot, NULL};
+  static const lua_CFunction searchers[] = {
+    searcher_preload,
+    searcher_Lua,
+    searcher_C,
+    searcher_Croot,
+    NULL
+  };
   int i;
   /* create 'searchers' table */
   lua_createtable(L, sizeof(searchers)/sizeof(searchers[0]) - 1, 0);
