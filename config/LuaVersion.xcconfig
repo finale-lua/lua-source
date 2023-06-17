@@ -8,6 +8,6 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-LUA_VERSION = 5.4.4
+LUA_VERSION = 5.4.6
 LUABRIDGE_VERSION = LuaBridge3
 

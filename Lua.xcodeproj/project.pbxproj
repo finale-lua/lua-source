@@ -210,7 +210,7 @@
 				B503E8342731F10F00B4DB3A /* lzio.h */,
 			);
 			name = Source;
-			path = "lua-5.4.4/src";
+			path = "lua-5.4.6/src";
 			sourceTree = "<group>";
 		};
 		B50BDD1526E9499000F1FAD3 = {
