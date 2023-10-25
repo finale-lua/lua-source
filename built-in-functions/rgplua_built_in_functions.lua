@@ -209,3 +209,38 @@ function eachstaff(region)
         end
     end
 end
+
+function prettyformatjson(json_string, tab_width)
+    tab_width = tab_width or 3
+    local level = 0
+    local formatted_string = ""
+    local in_string = false
+
+    for i = 1, #json_string do
+        local char = json_string:sub(i, i)
+
+        if char == '"' and (i == 1 or json_string:sub(i - 1, i - 1) ~= "\\") then
+            in_string = not in_string
+        end
+
+        if not in_string then
+            if char == "{" or char == "[" then
+                level = level + 1
+                formatted_string = formatted_string .. char .. "\n" .. string.rep(" ", tab_width*level)
+            elseif char == "}" or char == "]" then
+                level = level - 1
+                formatted_string = formatted_string .. "\n" .. string.rep(" ", tab_width*level) .. char
+            elseif char == "," then
+                formatted_string = formatted_string .. char .. "\n" .. string.rep(" ", tab_width * level)
+            elseif char == ":" then
+                formatted_string = formatted_string .. char .. " "
+            else
+                formatted_string = formatted_string .. char
+            end
+        else
+            formatted_string = formatted_string .. char
+        end
+    end
+
+    return formatted_string
+end
