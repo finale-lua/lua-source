@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		B57A602729CD33ED0061E990 /* strbuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strbuf.c; sourceTree = "<group>"; };
 		B57A602829CD33ED0061E990 /* strbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strbuf.h; sourceTree = "<group>"; };
-		B57A602A29CD33ED0061E990 /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; };
+		B57A602A29CD33ED0061E990 /* lua_cjson.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.c; path = lua_cjson.c; sourceTree = "<group>"; tabWidth = 4; };
 		B57A603529CD36480061E990 /* fpconv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fpconv.h; sourceTree = "<group>"; };
 		B57A603829CD376C0061E990 /* Lua-CJSON.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Lua-CJSON.xcconfig"; sourceTree = "<group>"; };
 		B57A604629CD3E960061E990 /* fpconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fpconv.c; sourceTree = "<group>"; };
