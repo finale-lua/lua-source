@@ -213,7 +213,7 @@ end
 function prettyformatjson(json_string, tab_width)
     tab_width = tab_width or 3
     local level = 0
-    local formatted_string = ""
+    local formatted_parts = {} -- accumulate formatted string into this table for speed
     local in_string = false
 
     for i = 1, #json_string do
@@ -226,21 +226,28 @@ function prettyformatjson(json_string, tab_width)
         if not in_string then
             if char == "{" or char == "[" then
                 level = level + 1
-                formatted_string = formatted_string .. char .. "\n" .. string.rep(" ", tab_width*level)
+                table.insert(formatted_parts, char)
+                table.insert(formatted_parts, "\n")
+                table.insert(formatted_parts, string.rep(" ", tab_width * level))
             elseif char == "}" or char == "]" then
                 level = level - 1
-                formatted_string = formatted_string .. "\n" .. string.rep(" ", tab_width*level) .. char
+                table.insert(formatted_parts, "\n")
+                table.insert(formatted_parts, string.rep(" ", tab_width * level))
+                table.insert(formatted_parts, char)
             elseif char == "," then
-                formatted_string = formatted_string .. char .. "\n" .. string.rep(" ", tab_width * level)
+                table.insert(formatted_parts, char)
+                table.insert(formatted_parts, "\n")
+                table.insert(formatted_parts, string.rep(" ", tab_width * level))
             elseif char == ":" then
-                formatted_string = formatted_string .. char .. " "
+                table.insert(formatted_parts, char)
+                table.insert(formatted_parts, " ")
             else
-                formatted_string = formatted_string .. char
+                table.insert(formatted_parts, char)
             end
         else
-            formatted_string = formatted_string .. char
+            table.insert(formatted_parts, char)
         end
     end
 
-    return formatted_string
+    return table.concat(formatted_parts)
 end
