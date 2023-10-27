@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bfa6ffb3-ddd2-4117-9dc0-14b42b324be8}</ProjectGuid>
+    <ProjectGuid>{4A84818E-56C1-47FE-81F2-7D016829B9BD}</ProjectGuid>
     <RootNamespace>socketstatic</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -159,38 +159,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\luasocket\src\auxiliar.h" />
-    <ClInclude Include="..\luasocket\src\buffer.h" />
-    <ClInclude Include="..\luasocket\src\except.h" />
-    <ClInclude Include="..\luasocket\src\inet.h" />
-    <ClInclude Include="..\luasocket\src\io.h" />
-    <ClInclude Include="..\luasocket\src\luasocket.h" />
-    <ClInclude Include="..\luasocket\src\mime.h" />
-    <ClInclude Include="..\luasocket\src\options.h" />
-    <ClInclude Include="..\luasocket\src\pierror.h" />
-    <ClInclude Include="..\luasocket\src\select.h" />
-    <ClInclude Include="..\luasocket\src\socket.h" />
-    <ClInclude Include="..\luasocket\src\tcp.h" />
-    <ClInclude Include="..\luasocket\src\timeout.h" />
-    <ClInclude Include="..\luasocket\src\udp.h" />
-    <ClInclude Include="..\luasocket\src\wsocket.h" />
+    <ClInclude Include="..\luafilesystem\src\lfs.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\luasocket\src\auxiliar.c" />
-    <ClCompile Include="..\luasocket\src\buffer.c" />
-    <ClCompile Include="..\luasocket\src\except.c" />
-    <ClCompile Include="..\luasocket\src\inet.c" />
-    <ClCompile Include="..\luasocket\src\io.c" />
-    <ClCompile Include="..\luasocket\src\luasocket.c" />
-    <ClCompile Include="..\luasocket\src\mime.c" />
-    <ClCompile Include="..\luasocket\src\options.c" />
-    <ClCompile Include="..\luasocket\src\select.c" />
-    <ClCompile Include="..\luasocket\src\tcp.c" />
-    <ClCompile Include="..\luasocket\src\timeout.c" />
-    <ClCompile Include="..\luasocket\src\udp.c" />
-    <ClCompile Include="..\luasocket\src\wsocket.c" />
+    <ClCompile Include="..\luafilesystem\src\lfs.c" />
     <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

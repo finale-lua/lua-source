@@ -21,49 +21,7 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\luasocket\src\auxiliar.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\buffer.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\except.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\inet.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\io.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\luasocket.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\options.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\select.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\tcp.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\timeout.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\udp.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\wsocket.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\pierror.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\socket.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\luasocket\src\mime.h">
+    <ClInclude Include="..\luafilesystem\src\lfs.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,43 +29,7 @@
     <ClCompile Include="pch.c">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\luasocket\src\auxiliar.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\buffer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\except.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\inet.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\io.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\luasocket.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\options.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\select.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\tcp.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\timeout.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\udp.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\wsocket.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\luasocket\src\mime.c">
+    <ClCompile Include="..\luafilesystem\src\lfs.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
