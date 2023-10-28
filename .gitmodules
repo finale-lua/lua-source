@@ -10,3 +10,6 @@
 [submodule "LuaBridge3"]
 	path = LuaBridge3
 	url = git@github.com:kunitoki/LuaBridge3.git
+[submodule "luafilesystem"]
+	path = luafilesystem
+	url = git@github.com:lunarmodules/luafilesystem.git
