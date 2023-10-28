@@ -18,7 +18,7 @@
 		B5E23BBE29BFC9C40007AA46 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		B5E23BBF29BFC9C40007AA46 /* ReleaseAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseAll.xcconfig; sourceTree = "<group>"; };
 		B5E23BC029BFC9C40007AA46 /* DebugAll.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugAll.xcconfig; sourceTree = "<group>"; };
-		B5EE21C32711F8EE00596BBE /* liblusfilesystem-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblusfilesystem-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5EE21C32711F8EE00596BBE /* libluafilesystem-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libluafilesystem-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 		B5EE21C42711F8EE00596BBE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5EE21C32711F8EE00596BBE /* liblusfilesystem-static.a */,
+				B5EE21C32711F8EE00596BBE /* libluafilesystem-static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B5EE21C22711F8EE00596BBE /* lusfilesystem-static */ = {
+		B5EE21C22711F8EE00596BBE /* luafilesystem-static */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5EE21C72711F8EE00596BBE /* Build configuration list for PBXNativeTarget "lusfilesystem-static" */;
+			buildConfigurationList = B5EE21C72711F8EE00596BBE /* Build configuration list for PBXNativeTarget "luafilesystem-static" */;
 			buildPhases = (
 				B5EE21BF2711F8EE00596BBE /* Headers */,
 				B5EE21C02711F8EE00596BBE /* Sources */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = "lusfilesystem-static";
+			name = "luafilesystem-static";
 			productName = "socket-static";
-			productReference = B5EE21C32711F8EE00596BBE /* liblusfilesystem-static.a */;
+			productReference = B5EE21C32711F8EE00596BBE /* libluafilesystem-static.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5EE21C22711F8EE00596BBE /* lusfilesystem-static */,
+				B5EE21C22711F8EE00596BBE /* luafilesystem-static */,
 			);
 		};
 /* End PBXProject section */
@@ -290,7 +290,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5EE21C72711F8EE00596BBE /* Build configuration list for PBXNativeTarget "lusfilesystem-static" */ = {
+		B5EE21C72711F8EE00596BBE /* Build configuration list for PBXNativeTarget "luafilesystem-static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5EE21C82711F8EE00596BBE /* Debug */,
