@@ -248,6 +248,7 @@ function prettyformatjson(json_string, tab_width)
             table.insert(formatted_parts, char)
         end
     end
+    table.insert(formatted_parts, "\n")
 
     return table.concat(formatted_parts)
 end
