@@ -4,10 +4,11 @@ This repository contains all the Lua and Lua-related source code used by the _RG
 
 The following are included:
 
-- XCode and Visual Studio project files for building static libraries of the Lua language and `luasocket`. (These are the same project files used by _RGP Lua_.)
-- A submodule link for `luasocket`.
-- A back-ported version of the `utf8` library (from Lua 5.3) for use with Lua 5.2.
-- Lua source code (downloaded from the Lua Organization) for Lua 5.2, 5.3, and 5.4. Only Lua 5.2 is used by _RGP Lua_ (plus a copy of `lutf8lib.c` originally taken from 5.3). The other versions are there for reference only.
+- XCode and Visual Studio project files for building static libraries of the Lua language and other embedded C libraries. (These are the same project files used by _RGP Lua_.)
+- Submodule links for other open-source projects embedded in _RGP Lua_. These include `luasocket`, `luafilesystem`, and `lua-cjson`.
+- _RGP Lua_ currently uses `LuaBridge3` to interface with the [PDK Framework](https://pdk.finalelua.com/). _JW Lua_ uses an older version of `LuaBridge2`.
+- A back-ported version of the `utf8` library (from Lua 5.4) for use with Lua 5.2.
+- Lua source code (downloaded from the Lua Organization) for Lua 5.2, 5.3, and 5.4. Only Lua 5.4 is currently used by _RGP Lua_. The other versions are there for reference only.
 - The built-in Lua functions provided by _RGP Lua_ and _JW Lua_ to all scripts. These are mainly iterator functions such as `each`, `eachentry`, `eachentrysaved`, etc.
 
-Generally speaking, Pull Requests will not be accepted. But if you have an issue, please feel free to raise it.
+Generally speaking, pull requests will not be accepted. But if you have an issue, please feel free to raise it.
