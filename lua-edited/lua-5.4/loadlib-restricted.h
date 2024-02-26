@@ -9,6 +9,11 @@
 #define loadlib_restricted_h
 
 #ifdef __cplusplus
+// this static assert reminds us to re-implement loadlib-restricted.c each time we upgrade to a new Lua version
+static_assert(LUA_VERSION_RELEASE_NUM == 50406, "wrong Lua version");
+#endif
+
+#ifdef __cplusplus
 extern "C" {
 #endif
 
